@@ -3,92 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>نتائج الطالب</title>
+  <title>نتائج الطالب النهائية</title>
   <style>
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f7fa;
+      background: #fff;
     }
     header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 12px 20px;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
+      background: #fff;
+      padding: 12px 15px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
     }
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 0 15px;
+    header h2 {
+      font-size: 16px;
+      margin: 0;
+    }
+    .title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 15px 0;
     }
     .card {
       background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      padding: 15px;
     }
     .card h3 {
+      font-size: 16px;
       margin-top: 0;
-      color: #2c3e50;
-      font-size: 18px;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 8px;
+      margin-bottom: 10px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
+      font-size: 14px;
     }
     table th, table td {
       border: 1px solid #ddd;
-      padding: 10px;
+      padding: 8px;
       text-align: center;
-      font-size: 15px;
     }
     table th {
-      background: #f0f0f0;
-      font-weight: bold;
+      background: #f9f9f9;
     }
   </style>
 </head>
 <body>
   <header>
-    نتائج الطالب - سند فارس
+    <h2>سند فارس</h2>
   </header>
 
-  <div class="container">
-    <div class="card">
-      <h3>السنة الدراسية: 2025/2024 | الفصل الدراسي: الصيفي</h3>
-      <table>
-        <tr>
-          <th>رقم المادة</th>
-          <th>اسم المادة</th>
-          <th>عدد الساعات</th>
-          <th>العلامة</th>
-        </tr>
-        <tr>
-          <td>0301202</td>
-          <td>رياضيات هندسية (1)</td>
-          <td>3</td>
-          <td>ج</td>
-        </tr>
-        <tr>
-          <td>0904302</td>
-          <td>الطرق العددية الهندسية</td>
-          <td>3</td>
-          <td>د+</td>
-        </tr>
-        <tr>
-          <td>0907101</td>
-          <td>المهارات الحاسوبية للمهندسين</td>
-          <td>3</td>
-          <td>ج+</td>
-        </tr>
-      </table>
-    </div>
+  <div class="title">نتائج الطالب النهائية</div>
+
+  <div class="card">
+    <h3>السنة الدراسية: 2025/2024 | الفصل الدراسي: الصيفي</h3>
+    <table>
+      <tr>
+        <th>رقم المادة</th>
+        <th>اسم المادة</th>
+        <th>عدد الساعات</th>
+        <th>العلامة</th>
+      </tr>
+      <tr>
+        <td>0301202</td>
+        <td>رياضيات هندسية (1)</td>
+        <td>3</td>
+        <td>ج</td>
+      </tr>
+      <tr>
+        <td>0904302</td>
+        <td>الطرق العددية الهندسية</td>
+        <td>3</td>
+        <td>د+</td>
+      </tr>
+      <tr>
+        <td>0907101</td>
+        <td>المهارات الحاسوبية للمهندسين</td>
+        <td>3</td>
+        <td>ج+</td>
+      </tr>
+    </table>
   </div>
 </body>
 </html>
