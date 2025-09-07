@@ -1,223 +1,93 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>نتائج الطالب النهائية — نموذج محاكاة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نتائج الطالب النهائية</title>
   <style>
-    :root{
-      --bg:#f3f5f7;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --text:#0f172a;
-      --border:#e5e7eb;
-      --brand:#111827;
-      --action-red:#e74c3c;
-      --action-green:#4caf50;
-      --action-blue:#3b82f6;
-      --accent:#e9eef5;
-      --shadow:0 10px 30px rgba(2,6,23,.06);
-      --radius:18px;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    header {
+      background: #fff;
+      padding: 10px 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
-
-    .phone-frame{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
-
-    /* Topbar */
-    .topbar{
-      background:var(--card);
-      border-bottom:1px solid var(--border);
-      position:sticky;top:0;z-index:10;
-      box-shadow:0 2px 8px rgba(15,23,42,.03);
+    header h2 {
+      margin: 0;
+      font-size: 18px;
     }
-    .topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;gap:12px}
-    .title{font-weight:700;font-size:20px;color:var(--brand)}
-    .icon-btn{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--border);background:#fff}
-    .icon{width:20px;height:20px;display:block}
-
-    /* Quick actions row */
-    .quick-row{display:flex;align-items:center;justify-content:space-between;padding:10px 16px 14px 16px}
-    .quick-actions{display:flex;gap:12px}
-    .pill{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:#fff;box-shadow:var(--shadow)}
-    .pill svg{width:22px;height:22px}
-    .pill.red{background:var(--action-red)}
-    .pill.green{background:var(--action-green)}
-    .pill.blue{background:var(--action-blue)}
-    .user{font-weight:600;color:#111827;white-space:nowrap}
-
-    /* Content */
-    .content{padding:16px;display:grid;gap:16px}
-    .panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .panel-body{padding:16px}
-    .panel h3{margin:0 0 12px 0;font-size:16px;color:#111827}
-
-    /* Form */
-    .form-grid{display:grid;gap:12px}
-    .label{font-weight:700;color:#111827;margin-bottom:8px}
-    .select{
-      appearance:none;-moz-appearance:none;-webkit-appearance:none;
-      width:100%;padding:14px 44px 14px 12px;border-radius:14px;border:1px solid var(--border);background:#f8fafc; font-size:16px; color:#111827;
-      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%236b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');
-      background-repeat:no-repeat;background-position:12px center;
+    .content {
+      padding: 15px;
     }
-
-    /* Course item */
-    .course{border-top:1px solid var(--border)}
-    .course:first-child{border-top:0}
-    .course-inner{display:grid;grid-template-columns:1fr auto;row-gap:8px;column-gap:12px;padding:16px}
-    .k{color:var(--muted);font-weight:700}
-    .v{font-weight:700;color:#111827}
-    .muted{background:#f2f4f7}
-
-    .subtle{color:var(--muted);font-size:13px;margin-top:4px}
-
-    footer{padding:30px 0 24px;color:#64748b;text-align:center;font-size:12px}
-
-    @media (min-width:520px){
-      .phone-frame{margin:24px auto;border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(2,6,23,.06)}
-      body{background:linear-gradient(180deg,#eef2f7, #fff)}
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      font-size: 14px;
+      text-align: center;
+    }
+    table th {
+      background: #f0f0f0;
     }
   </style>
 </head>
 <body>
-  <div class="phone-frame">
-    <!-- Header -->
-    <header class="topbar">
-      <div class="topbar-inner">
-        <button class="icon-btn" aria-label="الرئيسية">
-          <!-- home icon -->
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 10v10h14V10"/></svg>
-        </button>
-        <div class="title">نتائج الطالب النهائية</div>
-        <button class="icon-btn" aria-label="القائمة">
-          <!-- burger icon -->
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        </button>
-      </div>
-      <div class="quick-row">
-        <div class="quick-actions">
-          <div class="pill red" title="خروج">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
-          </div>
-          <div class="pill green" title="حسابي">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="pill blue" title="الوضع">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          </div>
-        </div>
-        <div class="user" id="userDisplay">سند فارس</div>
-      </div>
-    </header>
-
-    <!-- Filters -->
-    <section class="content">
-      <div class="panel">
-        <div class="panel-body form-grid">
-          <div>
-            <div class="label">السنة الدراسية</div>
-            <select id="year" class="select" aria-label="السنة الدراسية"></select>
-          </div>
-          <div>
-            <div class="label">الفصل الدراسي</div>
-            <select id="term" class="select" aria-label="الفصل الدراسي"></select>
-            <div class="subtle">اختر السنة ثم الفصل لعرض المواد.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Results list -->
-      <div class="panel" id="resultsPanel">
-        <div class="panel-body" id="results"></div>
-      </div>
-    </section>
-
-    <footer>هذا نموذج واجهة محاكاة للاستخدام الشخصي — ليس موقعًا رسميًا.</footer>
+  <header>
+    <h2>سند فارس</h2>
+  </header>
+  <div class="content">
+    <div class="card">
+      <h3>السنة الدراسية: 2025/2024 | الفصل الدراسي: الصيفي</h3>
+      <table>
+        <tr>
+          <th>رقم المادة</th>
+          <th>اسم المادة</th>
+          <th>عدد الساعات</th>
+          <th>العلامة</th>
+        </tr>
+        <tr>
+          <td>0301202</td>
+          <td>رياضيات هندسية (1)</td>
+          <td>3</td>
+          <td>ج</td>
+        </tr>
+        <tr>
+          <td>0904302</td>
+          <td>الطرق العددية الهندسية</td>
+          <td>3</td>
+          <td>د+</td>
+        </tr>
+        <tr>
+          <td>0907101</td>
+          <td>المهارات الحاسوبية للمهندسين</td>
+          <td>3</td>
+          <td>ج+</td>
+        </tr>
+      </table>
+    </div>
   </div>
-
-  <script>
-    // ====== بيانات تجريبية (عدّلها كما تريد) ======
-    const DATA = {
-      "2025 / 2024": {
-        "الصيفي": [
-          { code: "0301202", name: "رياضيات هندسية (1)", hours: 3, grade: "ج" },
-          { code: "0904302", name: "الطرق العددية الهندسية", hours: 3, grade: "د+" },
-          { code: "0907101", name: "المهارات الحاسوبية للمهندسين", hours: 3, grade: "ج+" }
-        ]
-      }
-    };
-
-    // اسم المستخدم الظاهر (اختياري)
-    const USER_NAME = "سند فارس";
-    document.getElementById('userDisplay').textContent = USER_NAME;
-
-    // عناصر DOM
-    const yearSel = document.getElementById('year');
-    const termSel = document.getElementById('term');
-    const resultsEl = document.getElementById('results');
-    const resultsPanel = document.getElementById('resultsPanel');
-
-    // تعبئة القوائم
-    function populateYears(){
-      yearSel.innerHTML = '';
-      Object.keys(DATA).forEach((y, i)=>{
-        const opt = document.createElement('option');
-        opt.value = y; opt.textContent = y; if(i===0) opt.selected = true; yearSel.appendChild(opt);
-      });
-    }
-
-    function populateTerms(){
-      termSel.innerHTML = '';
-      const terms = Object.keys(DATA[yearSel.value] || {});
-      terms.forEach((t, i)=>{
-        const opt = document.createElement('option');
-        opt.value = t; opt.textContent = t; if(i===0) opt.selected = true; termSel.appendChild(opt);
-      });
-    }
-
-    function renderCourses(){
-      const list = (DATA[yearSel.value] || {})[termSel.value] || [];
-      resultsEl.innerHTML = '';
-      if(list.length === 0){
-        resultsEl.innerHTML = '<div class="subtle">لا توجد مواد لهذا الفصل.</div>';
-        return;
-      }
-      list.forEach((c, idx)=>{
-        const row = document.createElement('div');
-        row.className = 'course';
-        const inner = document.createElement('div');
-        inner.className = 'course-inner' + (idx % 2 ? ' muted' : '');
-        inner.innerHTML = `
-          <div class="k">رقم المادة</div>
-          <div class="v">${c.code}</div>
-          <div class="k">اسم المادة</div>
-          <div class="v">${c.name}</div>
-          <div class="k">عدد الساعات</div>
-          <div class="v">${c.hours}</div>
-          <div class="k">العلامة</div>
-          <div class="v">${c.grade}</div>
-        `;
-        row.appendChild(inner);
-        resultsEl.appendChild(row);
-      });
-    }
-
-    // تهيئة
-    populateYears();
-    populateTerms();
-    renderCourses();
-
-    yearSel.addEventListener('change', ()=>{ populateTerms(); renderCourses(); });
-    termSel.addEventListener('change', renderCourses);
-  </script>
 </body>
 </html>
